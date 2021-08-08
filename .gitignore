@@ -32,3 +32,5 @@ Rat_ModelsTime/*
 !/Rat_ModelsTime/*.txt
 
 Rat_JSONs/Calculate_Kappa.py
+
+.gitignore
