@@ -143,12 +143,21 @@ def define_model(in_shape=(1251, 1,), out_shape=2):
 
 model = define_model()
 color_map = defaultdict(dict)
-color_map[Conv1D]['fill'] = 'orange'
+color_map[Conv1D]['fill'] = 'red'
 color_map[Dropout]['fill'] = 'pink'
-color_map[MaxPooling1D]['fill'] = 'red'
-color_map[MaxPooling1D]['fill'] = 'red'
-color_map[AveragePooling1D]['fill'] = 'red'
+color_map[MaxPooling1D]['fill'] = 'brown'
+color_map[MaxPooling1D]['fill'] = 'brown'
+color_map[AveragePooling1D]['fill'] = 'brown'
 color_map[Dense]['fill'] = 'green'
-color_map[Flatten]['fill'] = 'teal'
+color_map[Flatten]['fill'] = 'cyan'
+color_map[Activation]['fill'] = 'blue'
+color_map[SeparableConv1D]['fill'] = 'lightgoldenrodyellow'
+color_map[BatchNormalization]['fill'] = 'yellowgreen'
+color_map[Add]['fill'] = 'purple'
+color_map[tf.keras.layers.Input]['fill'] = 'cyan'
+
+
 visualkeras.graph_view(model, connector_width=2,
                        show_neurons=True, to_file="network.png", color_map=color_map)
+
+print(model.summary())
