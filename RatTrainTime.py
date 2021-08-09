@@ -136,7 +136,6 @@ def define_model(in_shape=(1251, 1,), out_shape=2):
     return model
 
 
-
 for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
 
     Experiment = "TestAnimal" + str(animal)
@@ -186,7 +185,6 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     CH_trainlabel = to_categorical(CH_trainlabel)
     CH_vallabel = to_categorical(CH_vallabel)
 
-
     checkpoint_filepath = '02_08_2021_Rats_with_Times_Time_' + Experiment
     model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_filepath, save_weights_only=False,
                                                                    monitor='val_f1_score', mode='max', save_best_only=True)
@@ -209,6 +207,11 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
 
     preds = model.predict(x=[Test_CH1, Test_CH2])
     pred_classes = np.argmax(preds, axis=1)
+
+    Train_CH1, Test_CH1, Train_CH2, Test_CH2, Train_Labels, Test_Labels, Test_Times = create_training_data_time(
+        animal)
+
+    CONF_MAT = confusion_matrix(Test_Labels, pred_classes)
 
     ground_truth_in_minutes = []
     true_positive_in_minutes = []
@@ -243,6 +246,11 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     true_positive_in_minutes.append(true_positives)
     percentages.append(percentage_time)
 
+    TP = int(CONF_MAT[0, 0])
+    FP = int(CONF_MAT[1, 0])
+    TN = int(CONF_MAT[1, 1])
+    FN = int(CONF_MAT[0, 1])
+
     # Results are stored in JSON files
     import json
     name = "JSONsTime//" + Experiment + ".json"
@@ -251,4 +259,3 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     out_file = open(name, "w")
     json.dump(dict1, out_file, indent=6)
     out_file.close()
-
