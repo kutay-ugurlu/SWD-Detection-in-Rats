@@ -138,7 +138,6 @@ def define_model(in_shape=(1251, 1,), out_shape=2):
     return model
 
 
-
 for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
 
     Experiment = "TestAnimal" + str(animal)
@@ -187,7 +186,6 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     # one-hot labelling conversion
     CH_trainlabel = to_categorical(CH_trainlabel)
     CH_vallabel = to_categorical(CH_vallabel)
-
 
     checkpoint_filepath = '02_08_2021_Rats_with_Times_Time_' + Experiment
     model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_filepath, save_weights_only=False,
@@ -264,5 +262,3 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     json.dump(dict1, out_file, indent=6)
     out_file.close()
 
-
-# %%
