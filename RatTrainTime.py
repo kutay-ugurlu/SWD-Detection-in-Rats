@@ -1,3 +1,4 @@
+# %%
 import tensorflow_addons as tfa
 from matplotlib import pyplot as plt
 from keras.models import Sequential
@@ -25,6 +26,7 @@ from sklearn import preprocessing
 from keras.utils.np_utils import to_categorical
 import tensorflow_addons as tfa
 from sklearn.preprocessing import normalize
+from sklearn.metrics import confusion_matrix
 from create_training_data import create_training_data_time
 
 
@@ -210,6 +212,11 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     preds = model.predict(x=[Test_CH1, Test_CH2])
     pred_classes = np.argmax(preds, axis=1)
 
+    Train_CH1, Test_CH1, Train_CH2, Test_CH2, Train_Labels, Test_Labels, Test_Times = create_training_data_time(
+            animal)
+
+    CONF_MAT = confusion_matrix(Test_Labels,pred_classes)
+
     ground_truth_in_minutes = []
     true_positive_in_minutes = []
     percentages = []
@@ -243,12 +250,19 @@ for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
     true_positive_in_minutes.append(true_positives)
     percentages.append(percentage_time)
 
-    # Results are stored in JSON files
+    TP = int(CONF_MAT[0,0])
+    FP = int(CONF_MAT[1,0])
+    TN = int(CONF_MAT[1,1])
+    FN = int(CONF_MAT[0,1])
+
+    # Save evaluation results to JSON file 
     import json
-    name = "JSONsTime//" + Experiment + ".json"
+    name = "JSONsTime//" + Experiment + "with_conf_mat.json"
     dict1 = {"Loss": loss, "Recall": recall, "Accuracy": accuracy, "F1": f1_score, "GroundTruth_in_Minutes":
-             ground_truth_in_minutes, "True_Positive_in_Minutes": true_positive_in_minutes, "Percentages": percentages}
+             ground_truth_in_minutes, "True_Positive_in_Minutes": true_positive_in_minutes, "Percentages": percentages, "TP":TP, "FP":FP, "TN":TN, "FN":FN, "FP_rate":FP/np.sum(CONF_MAT,axis=None)}
     out_file = open(name, "w")
     json.dump(dict1, out_file, indent=6)
     out_file.close()
 
+
+# %%
