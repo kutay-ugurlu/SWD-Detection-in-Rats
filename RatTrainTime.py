@@ -137,8 +137,9 @@ def define_model(in_shape=(1251, 1,), out_shape=2):
         'Recall', "accuracy", tfa.metrics.F1Score(num_classes=2, threshold=0.5, average='macro')])
     return model
 
-# full animal list = [15, 16, 17, 86, 87, 88, 89, 90, 91, 92, 103, 104]
-for animal in [89]:
+## Leave-One-Record-Out Cross Validation Loop
+
+for animal in [15, 16, 17, 86, 88, 89, 90, 91, 92, 103, 104]:
 
     Experiment = "TestAnimal" + str(animal)
 
