@@ -10,3 +10,6 @@ The dependencies in [requirements.txt]((https://github.com/kutay-ugurlu/SWD-Dete
 ## Running Scripts 
 Utility scripts except [create_training_data.py](https://github.com/kutay-ugurlu/SWD-Detection-in-Rats/blob/master/Rat/create_training_data.py) are directly coded in main training scripts.
 Training scripts [RatTrainPSD.py](https://github.com/kutay-ugurlu/SWD-Detection-in-Rats/blob/master/Rat/RatTrainPSD.py) and [RatTrainTime.py](https://github.com/kutay-ugurlu/SWD-Detection-in-Rats/blob/master/Rat/RatTrainTime.py) are ready to run and they produce results in JSON and CSV directories. 
+
+## Comparison Study 
+The proposed model is compared to more classical approaches in [SWD Detect with SVM and Tree](https://github.com/kutay-ugurlu/SWD-Detect-with-SVM-and-Tree)
