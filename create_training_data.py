@@ -2,7 +2,7 @@ import numpy as np
 from glob import glob
 import os
 
-# Creates training and test data leaving the animal out based on the animal_idi along with the number of samples epilepsy is observed in a segment. 
+# Creates training and test data leaving the animal out based on the animal_id along with the number of samples epilepsy is observed in a segment. 
 
 def create_training_data_PSD(animal_id: int):
 
