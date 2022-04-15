@@ -1,5 +1,7 @@
 # SWD-Detection-in-Rats
 The repository of the *Automatic Detection of the Spike-and-Wave Discharges in Absence Epilepsy for Humans and Rats using Deep Learning* study accepted for publication in Biomedical Signal Processing and Control.
+
+![model](https://user-images.githubusercontent.com/83376963/163556139-0b8fd545-6c5f-4143-aac0-44980bbe1567.png)
 ## Initial Setup
 #### The model files are transferred to the Google Drive due to Git LFS restrictions.
 #### One should download the folders in the Google Drive URL below and "replace" with the corresponding folders in the GitHub repository before running the scripts to get meaningful results. 
