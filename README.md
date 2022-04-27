@@ -1,5 +1,6 @@
 # SWD-Detection-in-Rats
-The repository of the *Automatic Detection of the Spike-and-Wave Discharges in Absence Epilepsy for Humans and Rats using Deep Learning* study accepted for publication in Biomedical Signal Processing and Control.
+The repository of the *Automatic Detection of the Spike-and-Wave Discharges in Absence Epilepsy for Humans and Rats using Deep Learning* study published in [Biomedical Signal Processing and Control](https://www.sciencedirect.com/science/article/pii/S1746809422002488).
+
 
 ![model](https://user-images.githubusercontent.com/83376963/163556139-0b8fd545-6c5f-4143-aac0-44980bbe1567.png)
 ## Initial Setup
@@ -15,3 +16,19 @@ Training scripts [RatTrainPSD.py](https://github.com/kutay-ugurlu/SWD-Detection-
 
 ## Comparison Study 
 The proposed model is compared to more classical approaches in [<ins>SWD Detect with SVM and Tree</ins>](https://github.com/kutay-ugurlu/SWD-Detect-with-SVM-and-Tree)
+
+## Citation
+```
+@article{NNAbsenceEEG,\
+title = {Automatic detection of the spike-and-wave discharges in absence epilepsy for humans and rats using deep learning},\
+journal = {Biomedical Signal Processing and Control},\
+volume = {76},\
+pages = {103726},\
+year = {2022},\
+issn = {1746-8094},\
+doi = {https://doi.org/10.1016/j.bspc.2022.103726},\
+url = {https://www.sciencedirect.com/science/article/pii/S1746809422002488}, \
+author = {Oguzhan Baser and Melis Yavuz and Kutay Ugurlu and Filiz Onat and Berken Utku Demirel},\
+keywords = {Electroencephalography (EEG), Spike-and-wave (SWD), Absence epilepsy, Power spectral density, Deep learning},\
+}
+```
