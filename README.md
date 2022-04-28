@@ -19,16 +19,15 @@ The proposed model is compared to more classical approaches in [<ins>SWD Detect 
 
 ## Citation
 ```
-@article{NNAbsenceEEG,\
-title = {Automatic detection of the spike-and-wave discharges in absence epilepsy for humans and rats using deep learning},\
-journal = {Biomedical Signal Processing and Control},\
-volume = {76},\
-pages = {103726},\
-year = {2022},\
-issn = {1746-8094},\
-doi = {https://doi.org/10.1016/j.bspc.2022.103726},\
-url = {https://www.sciencedirect.com/science/article/pii/S1746809422002488}, \
-author = {Oguzhan Baser and Melis Yavuz and Kutay Ugurlu and Filiz Onat and Berken Utku Demirel},\
-keywords = {Electroencephalography (EEG), Spike-and-wave (SWD), Absence epilepsy, Power spectral density, Deep learning},\
+@article{NNAbsenceEEG,
+title = {Automatic detection of the spike-and-wave discharges in absence epilepsy for humans and rats using deep learning},
+journal = {Biomedical Signal Processing and Control},
+volume = {76},
+year = {2022},
+issn = {1746-8094},
+doi = {https://doi.org/10.1016/j.bspc.2022.103726},
+url = {https://www.sciencedirect.com/science/article/pii/S1746809422002488}, 
+author = {Oguzhan Baser and Melis Yavuz and Kutay Ugurlu and Filiz Onat and Berken Utku Demirel},
+keywords = {Electroencephalography (EEG), Spike-and-wave (SWD), Absence epilepsy, Power spectral density, Deep learning},
 }
 ```
